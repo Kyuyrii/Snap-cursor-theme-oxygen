@@ -1,0 +1,73 @@
+name: cursor-theme-oxygen
+build-base: core24
+base: bare
+version: '0.0.2012-06-kde4.8'
+platforms:
+  all:
+    build-on: [amd64]
+    build-for: [all]
+summary: Oxygen cursors
+description: |
+  A Snap that allows you to use Oxygen cursors in Snap apps
+grade: stable
+confinement: strict
+
+slots:
+  icon-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/icons/oxy-black
+        - $SNAP/share/icons/oxy-blue
+        - $SNAP/share/icons/oxy-bluecurve
+        - $SNAP/share/icons/oxy-brown
+        - $SNAP/share/icons/oxy-cherry
+        - $SNAP/share/icons/oxy-chrome
+        - $SNAP/share/icons/oxy-desert
+        - $SNAP/share/icons/oxy-emerald
+        - $SNAP/share/icons/oxy-green
+        - $SNAP/share/icons/oxy-grey
+        - $SNAP/share/icons/oxy-honeycomb
+        - $SNAP/share/icons/oxy-hot_orange
+        - $SNAP/share/icons/oxy-lilac
+        - $SNAP/share/icons/oxy-midnight_meadow
+        - $SNAP/share/icons/oxy-navy
+        - $SNAP/share/icons/oxy-norway
+        - $SNAP/share/icons/oxy-obsidian
+        - $SNAP/share/icons/oxy-obsidian-hc
+        - $SNAP/share/icons/oxy-olympus
+        - $SNAP/share/icons/oxy-olympus-inv
+        - $SNAP/share/icons/oxy-orchid
+        - $SNAP/share/icons/oxy-oxygen
+        - $SNAP/share/icons/oxy-peach
+        - $SNAP/share/icons/oxy-purple
+        - $SNAP/share/icons/oxy-red
+        - $SNAP/share/icons/oxy-red-argentina
+        - $SNAP/share/icons/oxy-sea_blue
+        - $SNAP/share/icons/oxy-steel
+        - $SNAP/share/icons/oxy-terra
+        - $SNAP/share/icons/oxy-terra_green
+        - $SNAP/share/icons/oxy-violet
+        - $SNAP/share/icons/oxy-viorange
+        - $SNAP/share/icons/oxy-white
+        - $SNAP/share/icons/oxy-whitewater
+        - $SNAP/share/icons/oxy-wonton
+        - $SNAP/share/icons/oxy-yellow
+        - $SNAP/share/icons/oxy-zion
+
+parts:
+  oxygen-cursor-theme:
+    plugin: dump
+    source: http://archive.ubuntu.com/ubuntu/pool/universe/o/oxygencursors/oxygen-cursor-theme_0.0.2012-06-kde4.8-6ubuntu1_all.deb
+    organize:
+      usr/share/icons: share/icons
+    prime:
+      - share/icons/
+
+  oxygen-cursor-theme-extra:
+    plugin: dump
+    source: http://archive.ubuntu.com/ubuntu/pool/universe/o/oxygencursors/oxygen-cursor-theme-extra_0.0.2012-06-kde4.8-6ubuntu1_all.deb
+    organize:
+      usr/share/icons: share/icons
+    prime:
+      - share/icons/
