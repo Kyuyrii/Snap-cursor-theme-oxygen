@@ -1,7 +1,7 @@
 name: cursor-theme-oxygen
 build-base: core24
 base: bare
-adopt-info: oxygen-cursors
+version: "6.8.2"
 platforms:
   all:
     build-on: [amd64]
@@ -30,6 +30,7 @@ parts:
   oxygen-cursors:
     plugin: cmake
     source: https://invent.kde.org/plasma/oxygen.git
+    source-tag: v$SNAPCRAFT_PROJECT_VERSION
     source-subdir: cursors
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
